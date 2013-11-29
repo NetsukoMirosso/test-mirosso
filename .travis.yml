@@ -1,8 +1,14 @@
-language: python
-python:
-  - "2.6"
-  - "2.7"
-  - "3.2"
-  - "3.3"
-# no dependency to install
-script: python mytestmodule.py
+"""Fake module to test tests."""
+
+def test_proc(x):
+    """Fake procedure to test doctests.
+
+    >>> test_proc(42)
+    42
+
+    """
+    return x
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
